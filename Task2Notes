@@ -5,3 +5,20 @@ q0 to q0 = 1+01
 q0 to q2 = 00
 q2 to q0 = ø
 q2 to q2 = 1+0
+-Resulting REGEX expression: (1+01)*00(0+1)*
+[2]
+-Made new final state q4
+-Removed q1, changing the following 
+From(Q) To(Q)  Label
+0	2	0
+0	3	10*1
+0	4	10*
+2	2	1
+2	3	0
+2	4	λ
+and everything else to an empty transition
+-Removed q2, changing the following
+From   To	Label
+0	3	10*1+01*0
+0	4	10*+01*
+-Removed q3, changing the tabel on the transition arraow between q0 and q4 to 10*+01*
